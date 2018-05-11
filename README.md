@@ -1,7 +1,6 @@
 # Form-Techstitution
 
-Form App for Techstituion 
-
+Form App for Techstitution
 
 How to install the form app → 
 
