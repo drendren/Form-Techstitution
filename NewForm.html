@@ -312,43 +312,59 @@
     
     
     function httpPost(){
-      var details = {
-          'nrProkurorimit': document.getElementById('nr.p').value,
-          'llojiProkurorimit': document.getElementById('ll.p').value,
-          'aktivitetiProkurorimit': document.getElementById('ap').value,
-          'dataInicimit' : document.getElementById('diap').value,
-          'dataPublikimit' : document.getElementById('dpsh').value,
-          'dataNenshkrimit' : document.getElementById('d.n.k').value,
-          'afatiPerImplementimin1' : document.getElementById('apik').value,
-          'afatiPerImplementimin2' : document.getElementById('date').value,
-          'dataPermbylljes' : document.getElementById('d.p.k').value,
-          'shumaEKontrates' : document.getElementById('shk').value,
-          'shumaTotale' : document.getElementById('shtpk').value,
-          'emriKontaktuesit' : document.getElementById('e.k').value,
-          'llojiKontrates' : document.getElementById('inputGroupSelect01').value,
-          'gjendjaEKontrates' : document.getElementById('inputGroupSelect02').value,
-          'shpjegim' : document.getElementById('shpj').value
-      };
+          if(document.getElementById('nr.p').value == '' ||
+          document.getElementById('ll.p').value == '' ||
+          document.getElementById('ap').value == '' ||
+          document.getElementById('diap').value == '' ||
+          document.getElementById('dpsh').value == '' ||
+          document.getElementById('d.n.k').value == '' ||
+          document.getElementById('apik').value == '' ||
+          document.getElementById('date').value == '' ||
+          document.getElementById('d.p.k').value == '' ||
+          document.getElementById('shk').value == '' ||
+          document.getElementById('shtpk').value == '' ||
+          document.getElementById('e.k').value == ''){
+            alert("Duhet ti plotesoni te gjitha fushat!")
+          }else {
+            var details = {
+                'nrProkurorimit': document.getElementById('nr.p').value,
+                'llojiProkurorimit': document.getElementById('ll.p').value,
+                'aktivitetiProkurorimit': document.getElementById('ap').value,
+                'dataInicimit' : document.getElementById('diap').value,
+                'dataPublikimit' : document.getElementById('dpsh').value,
+                'dataNenshkrimit' : document.getElementById('d.n.k').value,
+                'afatiPerImplementimin1' : document.getElementById('apik').value,
+                'afatiPerImplementimin2' : document.getElementById('date').value,
+                'dataPermbylljes' : document.getElementById('d.p.k').value,
+                'shumaEKontrates' : document.getElementById('shk').value,
+                'shumaTotale' : document.getElementById('shtpk').value,
+                'emriKontaktuesit' : document.getElementById('e.k').value,
+                'llojiKontrates' : document.getElementById('inputGroupSelect01').value,
+                'gjendjaEKontrates' : document.getElementById('inputGroupSelect02').value,
+                'shpjegim' : document.getElementById('shpj').value
+            };
 
-      var formBody = [];
-      for (var detail in details) {
-        var encodedKey = encodeURIComponent(detail);
-        var encodedValue = encodeURIComponent(details[detail]);
-        formBody.push(encodedKey + "=" + encodedValue);
-      }
-      formBody = formBody.join("&");
+            var formBody = [];
+            for (var detail in details) {
+              var encodedKey = encodeURIComponent(detail);
+              var encodedValue = encodeURIComponent(details[detail]);
+              formBody.push(encodedKey + "=" + encodedValue);
+            }
+            formBody = formBody.join("&");
 
-      fetch('http://localhost:8080/form', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-        },
-        body: formBody
-      })
-      
-      passNrProkurorimit();
-      setTimeout(()=>{window.location.assign("OldForm.html")}, 12 );
-    }
+            fetch('http://localhost:8080/form', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+              },
+              body: formBody
+            })
+            
+            passNrProkurorimit();
+            setTimeout(()=>{window.location.assign("OldForm.html")}, 12 );
+          }
+
+        }
     
     function passNrProkurorimit() {
       var nrProkurorimit = document.getElementById('nr.p').value
