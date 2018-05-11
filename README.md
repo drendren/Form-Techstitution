@@ -1,7 +1,9 @@
 # Form-Techstitution
 
 Form App for Techstitution
+
 *Google Chrome recommended !*
+
 How to install the form app → 
 
 In terminal write the following commands:
