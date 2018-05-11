@@ -4,6 +4,8 @@ Form App for Techstitution
 
 How to install the form app → 
 
+*Google Chrome recommended*
+
 In terminal write the following commands:
 
 • cd Desktop
