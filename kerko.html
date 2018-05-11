@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+			<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+			<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<style type="text/css">
+		body {
+			background-color: 	 rgba(153, 102, 0,0.3)	
+			}
+			.jumbotron {
+				background-color: rgba(153, 102, 0, 0.5);
+				color:#1a1100;
+				font-size: 20;
+				margin-top: 10%;;
+
+			}
+			select {
+				background-color: rgb(255, 230, 179)
+
+			}
+			
+		
+		</style>
+	</head>
+	<body>
+		<nav class="navbar navbar-default">
+			<div class="container">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+			
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="kerko.html"><i class="fas fa-university"></i>  Komuna e Prishtin&euml;s</a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="#">Datat</a></li>
+						<li><a href="#">Llojet </a></li>
+						<li><a href="#">Gjendja </a></li>
+					 
+					</ul>
+					<form class="navbar-form navbar-right">
+									<div class="form-group">
+										<input type="text" class="form-control" placeholder="K&euml;rko nj&euml; kontrat&euml;">
+									</div>
+									<button type="submit" class="btn btn-default">K&euml;rko</button>
+								</form>
+		
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+		<div class="container">
+				<div class="jumbotron">
+				<div class="btn-group">
+					<h1><i class="far fa-hand-point-up"></i> K&euml;rko kontratat :</h1>
+					<p>Shiko nj&euml;r&euml;n nga kontratat e fundit m&euml; posht&euml;:</p>
+					<button type="button" class="btn btn-default dropdown-toggle btn-lg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i class="far fa-hand-point-up"></i> Shiko nje kontrate  <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu pull-bottom" id="list"></ul>
+				</div>
+				
+					
+				
+		<script src="https://code.jquery.com/jquery-2.1.4.js"></script>	
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script>
+		
+		window.onload = zgjedhFormen("http://localhost:8080/forms");
+		function zgjedhFormen(theUrl) {
+			var xmlHttp = new XMLHttpRequest();
+			xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+			xmlHttp.send( null );
+			var response = xmlHttp.responseText;
+			var obj = JSON.parse(response);
+			// Populate list with options:
+			var ulist = document.getElementById("list");
+			if (obj!=""){
+				for(var i = 0; i < obj.length; i++) {
+					var opt = obj[i].nrProkurorimit;
+					var a = document.createElement("a");
+					var newItem = document.createElement("li");
+					a.textContent = "Nr Prokurorimit: "+opt;
+					a.setAttribute('href', "javascript: loadForm(\""+opt+"\");");
+					newItem.appendChild(a);
+					ulist.appendChild(newItem);
+				}
+			}else{
+				var a = document.createElement("a");
+				var newItem = document.createElement("li");
+				a.textContent = "Nuk ka asnje kontrate!";
+				newItem.appendChild(a);
+				ulist.appendChild(newItem);
+			}
+
+		}
+		
+		function loadForm(nr){
+			localStorage.setItem("NrProkurorimit", nr);
+			setTimeout(()=>{window.location.assign("OldForm.html")}, 12 );
+		}
+		
+		
+		
+		
+		
+		
+		</script>
+	</body>
+</html>

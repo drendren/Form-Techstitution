@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Source+Serif+Pro" rel="stylesheet">
+   
+    <style type="text/css">
+
+        body {
+         font-family: 'Source Serif Pro', serif;
+            width: 100%;
+            border: 1px solid white;
+            padding: 20px;
+            margin: 10px auto;
+            max-width: 700px;
+            background: rgba(206, 218, 237,0.2);
+      
+        }
+
+         label { 
+            width: 46%; 
+            float: center; 
+            margin: 0 20px 0 0;
+            padding:  0.2em;
+            word-wrap: break-word;
+         }
+
+         span { 
+            display: block; 
+            margin: 1px 0 4px; 
+            padding-right: 5px
+
+        }
+         input { 
+
+            width: 46%; 
+            border: 1px solid #000;
+            padding: 5px; 
+
+         }
+
+         h1  {
+             font-family: 'Merriweather', serif;
+              color: white;
+             text-align: center;
+            padding-right: 6%;
+            font-size: 2em;
+            
+         }
+
+         .by {
+            width: 95.5%
+          }
+
+         .nice {
+            padding: 14px 40px;
+            width: 250px;
+          }
+
+        .dergo {
+          display: inline-block;
+          border-radius: 12px;
+          background-color: #1a75ff;
+          border: none;
+          color: #FFFFFF;
+          text-align: center;
+          font-size: 20px;
+          padding: 10px;
+          width: 290px;
+          transition: all 0.5s;
+          cursor: pointer;
+          margin: 5px;
+
+      }
+
+        .dergo span {
+          cursor: pointer;
+          display: inline-block;
+          position: relative;
+          transition: 0.5s;
+        }
+
+        .dergo span:after {
+          content: '\00bb';
+          position: absolute;
+          opacity: 0;
+          top: 0;
+          right: -20px;
+          transition: 0.5s;
+        }
+
+        .dergo:hover span {
+          padding-right: 25px;
+        }
+
+        .dergo:hover span:after {
+          opacity: 1;
+          right: 0;
+        }
+
+        .back {
+          display: inline-block;
+          border-radius: 12px;
+          background-color: grey;
+          border: none;
+          color: #FFFFFF;
+          text-align: center;
+          font-size: 20px;
+          padding: 10px;
+          width: 290px;
+          transition: all 0.5s;
+          cursor: pointer;
+          margin: 5px;
+        }
+
+        .back:hover {
+          background: grey;
+        }
+        .back span {
+          cursor: pointer;
+          display: inline-block;
+          position: relative;
+          transition: 0.5s;
+        }
+        .back span:after {
+          content: '\00bb';
+          position: absolute;
+          opacity: 0;
+          top: 0;
+          left: -20px;
+          transition: 0.5s;
+        }
+
+        .back:hover span {
+          padding-left: 25px;
+        }
+
+        .back:hover span:after {
+          opacity: 1;
+          left: 0;
+        }
+
+         .mb-3 {
+         
+          padding-right: 55%
+        }
+
+        h4 {
+        	margin-top: 3%;
+        	margin-bottom: 3%;
+        	color: #006bb3;
+          text-align: left;
+        }
+
+        h5 {
+        	margin-top: 3%;
+        	margin-bottom: 3%;
+        	color: #616366;
+          font-weight: 700;
+
+        }
+
+        .shpjegim {
+        	text-align: center;
+        	padding: 2%;
+        }
+
+        textarea {
+            resize: none;
+        }
+        hr.style-one {
+          border: 0;
+          height: 1px;
+          background: #333;
+          background-image: linear-gradient(to right, grey,  #66a3ff, #e6f0ff);
+        }
+        
+       .container{ 
+        background-color: #296ed8 ;
+        border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+   <div class="container">
+
+        <form id="myForm"
+        <div class="page-header">
+          <h1><i class="far fa-edit"></i> Shto nj&euml; kontrat&euml; t&euml; re</h1>
+        </div>
+        
+        <hr class="style-one">
+
+        <h4><strong><i class="fab fa-leanpub"></i> Prokurorimi:</strong></h4>
+
+        <label for="nr.p">
+               <span>Nr. rendor i prokurorimit</span>
+               <input id="nr.p" class="form-control bby" type="number" placeholder="Nr. rendor i prokurorimit" required />
+        </label>
+        <label for="ll.p">
+               <span>Lloji i prokurorimit</span>
+               <input id="ll.p" class="form-control" type="text" placeholder="Lloji i prokurorimit" required />
+        </label>
+
+        <br>
+
+        <label for="ap">Aktiviteti i prokurorimit </label>	
+               
+                <input  id="ap"  class="form-control by" type="text" placeholder="Aktiviteti i Prokurorimit" required />
+        
+
+        <hr class="style-one">
+         
+        <h4><strong><i class="far fa-calendar-alt"></i> Datat:</strong></h4>
+
+        <label for="diap">
+               <span>Data e inicimit t&euml; aktivitetit t&euml; prokurorimit</span>
+               <input id="diap" class="form-control" type="text" placeholder="03.03.2018" required />
+        </label>
+        <label for="dpsh">
+               <span>Data e publikimit t&euml; shpalljes</span>
+               <input id="dpsh" class="form-control" type="text" placeholder="03.03.2018" required />
+        </label>
+
+        <br>
+
+        <label for="d.n.k">Data e n&euml;nshkrmit t&euml; kontrat&euml;s
+        </label>
+
+        <br>
+
+          <input id="d.n.k" class="form-control by" type="text" placeholder="03.03.2018">
+        <label for="apik">
+              <span>Afatet p&euml;r implementimin e kontrat&euml;s</span>
+              <input id="apik" class="form-control" type="text" placeholder="03.03.2018" required />
+        </label>
+        <label for="date">
+              <input id="date" class="form-control" type="text" placeholder="03.03.2018" required />
+        </label>
+        <br>
+        <label for="d.p.k">Data e p&euml;rmbylljes s&euml; kontrat&euml;s(data e pranimit t&euml; p&euml;rkohshem / preliminar) </label>
+            
+            <input id="d.p.k" class="form-control by" type="text" placeholder="03.03.2018" required>
+            
+        <hr class="style-one">
+
+        <h4><strong><i class="fas fa-euro-sign"></i> &Ccedil;mimi dhe t&euml; dh&euml;nat e tjera:</strong></h4>
+
+        <label for="shk">
+               <span>Shuma e kontrat&euml;s(duke p&euml;rfshir&euml; t&euml; gjitha kushtet)</span>
+               <input id="shk" class="form-control" type="text" placeholder="&Ccedil;mimi i kontrat&euml;s" required />
+        </label>
+        <label for="shtpk">
+               <span>Shuma totale e paguar p&euml;r kontrat&euml;n</span>
+               <input id="shtpk" class="form-control" type="text" placeholder="&Ccedil;mimi total" required />
+        </label>
+
+        
+
+        <label for="e.k">Emri i kontraktuesit  </label>
+            
+            <input id="e.k" class="form-control by" type="text" placeholder="Emri dhe Mbiemri" required>
+
+        <hr class="style-one">
+
+        <h4><strong><i class="fas fa-info-circle"></i> T&euml; dh&euml;na t&euml; detajuara:</strong></h4>
+
+        <div class="input-group mb-3">
+  			<select class="custom-select" id="inputGroupSelect01">
+	   			<option selected>Lloji i kontrat&euml;s:</option>
+	    		<option value="k.sh">Kontrata e shitblerjes</option>
+	    		<option value="k.q">Kontrata e qiras&euml;</option>
+	    		<option value="k.v">Kontrata mbi vepr&euml;n</option>
+	    		<option value="k.o">Kontrata e ortak&euml;ris&euml;</option>
+           </select>
+        </div> 
+        
+
+        <div class="input-group mb-3">
+  			<select class="custom-select" id="inputGroupSelect02">
+	   			<option selected>Gjendja e kontrat&euml;s:</option>
+	    		<option value="1">E p&euml;rfunduar</option>
+	    		<option value="2">E pap&euml;rfunduar</option>
+           </select>
+        </div>  
+        <hr class="style-one">
+
+        <h5><i class="fas fa-asterisk"></i> Shpjegim:</h5> 
+
+        <textarea id="shpj" rows="2.5" cols="70" class="shpjegim" placeholder="Jep nj&euml; shpjegim t&euml; shkurt&euml;r rreth kontrat&euml;s apo detaje t&euml; cilat nuk jan&euml; t&euml; p&euml;rmendura m&euml; sip&euml;r." ></textarea>
+        <br>
+  
+        <br>
+
+        <button type="button" class="btn btn-primary btn-lg dergo" onclick=enableInputFields()><span>NDRYSHO</span></button>
+
+        <button type="button" class="btn btn-primary btn-lg back" onclick=httpPut()><span>RUAJ NDRYSHIMET</span></button>  
+
+
+         
+      
+      </form>
+
+    </div>
+    
+
+    
+    <script>
+    
+    window.onload = disableInputFields();
+    window.onload = httpGetByForm("http://localhost:8080/forms");
+    
+    function httpGetByForm(theUrl){
+      var xmlHttp = new XMLHttpRequest();
+      var selectedValue = localStorage.getItem("NrProkurorimit");
+      xmlHttp.open( "GET", theUrl+"/"+selectedValue, false ); // false for synchronous request
+      xmlHttp.send( null );
+      var response = xmlHttp.responseText;
+      var obj = JSON.parse(response);
+      document.getElementById('nr.p').value = obj.nrProkurorimit;
+      document.getElementById('ll.p').value = obj.llojiProkurorimit;
+      document.getElementById('ap').value = obj.aktivitetiProkurorimit;
+      document.getElementById('diap').value = obj.dataInicimit;
+      document.getElementById('dpsh').value = obj.dataPublikimit;
+      document.getElementById('d.n.k').value = obj.dataNenshkrimit;
+      document.getElementById('apik').value = obj.afatiPerImplementimin1;
+      document.getElementById('date').value = obj.afatiPerImplementimin2;
+      document.getElementById('d.p.k').value = obj.dataPermbylljes;
+      document.getElementById('shk').value = obj.shumaEKontrates;
+      document.getElementById('shtpk').value = obj.shumaTotale;
+      document.getElementById('e.k').value = obj.emriKontaktuesit;
+      document.getElementById('inputGroupSelect01').value = obj.llojiKontrates;
+      document.getElementById('inputGroupSelect02').value = obj.gjendjaEKontrates;
+      document.getElementById('shpj').value = obj.shpjegim;
+    }
+    
+    function httpPut(){
+      var details = {
+          'nrProkurorimit': document.getElementById('nr.p').value,
+          'llojiProkurorimit': document.getElementById('ll.p').value,
+          'aktivitetiProkurorimit': document.getElementById('ap').value,
+          'dataInicimit' : document.getElementById('diap').value,
+          'dataPublikimit' : document.getElementById('dpsh').value,
+          'dataNenshkrimit' : document.getElementById('d.n.k').value,
+          'afatiPerImplementimin1' : document.getElementById('apik').value,
+          'afatiPerImplementimin2' : document.getElementById('date').value,
+          'dataPermbylljes' : document.getElementById('d.p.k').value,
+          'shumaEKontrates' : document.getElementById('shk').value,
+          'shumaTotale' : document.getElementById('shtpk').value,
+          'emriKontaktuesit' : document.getElementById('e.k').value,
+          'llojiKontrates' : document.getElementById('inputGroupSelect01').value,
+          'gjendjaEKontrates' : document.getElementById('inputGroupSelect02').value,
+          'shpjegim' : document.getElementById('shpj').value
+      };
+
+      var formBody = [];
+      for (var detail in details) {
+        var encodedKey = encodeURIComponent(detail);
+        var encodedValue = encodeURIComponent(details[detail]);
+        formBody.push(encodedKey + "=" + encodedValue);
+      }
+      formBody = formBody.join("&");
+
+      fetch("http://localhost:8080/form"+"/"+document.getElementById('nr.p').value, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+        },
+        body: formBody
+      })
+      
+      disableInputFields();
+    }
+    
+    function disableInputFields() {
+      document.getElementById('nr.p').disabled = true;
+      document.getElementById('ll.p').disabled = true;
+      document.getElementById('ap').disabled = true;
+      document.getElementById('diap').disabled = true;
+      document.getElementById('dpsh').disabled = true;
+      document.getElementById('d.n.k').disabled = true;
+      document.getElementById('apik').disabled = true;
+      document.getElementById('date').disabled = true;
+      document.getElementById('d.p.k').disabled = true;
+      document.getElementById('shk').disabled = true;
+      document.getElementById('shtpk').disabled = true;
+      document.getElementById('e.k').disabled = true;
+      document.getElementById('inputGroupSelect01').disabled = true;
+      document.getElementById('inputGroupSelect02').disabled = true;
+      document.getElementById('shpj').disabled = true;
+      document.getElementById('shpj').style.backgroundColor = String('#E9EBEE');
+    }
+    
+    function enableInputFields() {
+      document.getElementById('ll.p').disabled = false;
+      document.getElementById('ap').disabled = false;
+      document.getElementById('diap').disabled = false;
+      document.getElementById('dpsh').disabled = false;
+      document.getElementById('d.n.k').disabled = false;
+      document.getElementById('apik').disabled = false;
+      document.getElementById('date').disabled = false;
+      document.getElementById('d.p.k').disabled = false;
+      document.getElementById('shk').disabled = false;
+      document.getElementById('shtpk').disabled = false;
+      document.getElementById('e.k').disabled = false;
+      document.getElementById('inputGroupSelect01').disabled = false;
+      document.getElementById('inputGroupSelect02').disabled = false;
+      document.getElementById('shpj').disabled = false;
+      document.getElementById('shpj').style.backgroundColor = '';
+    }
+  
+    
+    </script>
+   
+</body>
+</html>
