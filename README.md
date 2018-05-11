@@ -7,8 +7,9 @@ How to install the form app →
 
 In terminal write the following commands:
 
-cd Desktop
-git clone https://github.com/arianithetemi/store-api.git
-cd store-api
-npm install
-npm start (or nodemon)
+• cd Desktop
+• git clone https://github.com/drendren/Form-Techstitution.git
+• cd Form-Techstitution
+• mongod
+• node app
+• open browser - localhost:8080
